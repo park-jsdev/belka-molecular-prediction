@@ -9,11 +9,11 @@ Predicting small molecule binding affinity to protein targets is crucial for eff
 ## Methods
 
 ### Feature Engineering Techniques
-- **SMILES Representations:** Provides a concise, standardized linear notation for molecules, capturing the basic structural information.
-- **ECFP Fingerprints:** Encodes molecular structures into fixed-length binary vectors, capturing substructural information and facilitating efficient similarity searches.
-- **Word Embeddings:** Transforms chemical information into high-dimensional vectors that capture semantic relationships between molecules, enhancing the contextual understanding.
-- **Retrieval-Augmentation-Generation (RAG):** Combines retrieval of relevant information from large datasets with generative capabilities, enriching the dataset with contextually relevant information.
-- **Vector Search Techniques:** Allows efficient retrieval of similar molecules from large datasets, enhancing the ability to find relevant molecular interactions.
+- **SMILES Representations:** Provides a standardized textual format notation for molecules, capturing the basic structural information.
+- **ECFP Fingerprints:** Encodes molecular structures into fixed-length binary vectors, capturing substructural information and facilitating efficient similarity comparisons.
+- **MolFormer Word Embeddings:** Uses pretrained chemical language model (MolFormer) to encode SMILES sequences into high-dimensional vectors that capture semantic and structural relationships between molecules, enhancing contextual information.
+- **Retrieval-Augmented Representation Learning:** Applies FAISS-based nearest-neighbor search over MolFormer embeddings to retrieve similar molecules, using attention-weighted aggregation of neighbor features to enrich original molecular represtnations, improving predictive signal.
+- **Vector Search Techniques:** AUses FAISS for efficient approximate nearest neighbor search in high-dimensional embedding space, enabling rapid similarity-based feature enrichment across large molecular datasets.
 
 ### Modeling Approach
 An ensemble learning strategy, combining Random Forest and XGBoost classifiers, is used to make predictions. This approach leverages the diverse strengths of each model, resulting in enhanced robustness and accuracy.
